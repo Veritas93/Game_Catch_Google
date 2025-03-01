@@ -1,0 +1,117 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Catch The Google</title>
+</head>
+<body>
+<main>
+    <section class="container">
+        <div id="start-screen" class="start-screen">
+            <h2 class="nameGame">Catch The Google</h2>
+            <p>Select settings and start the game:</p>
+            <div class="top-items">
+                <div class="line">
+                    <label for="gridSize">Grid size</label>
+                    <select name="gridSize" id="gridSize">
+                        <option value="4x4">4x4</option>
+                        <option value="5x5">5x5</option>
+                        <option value="7x7">7x7</option>
+                        <option value="8x8">8x8</option>
+                    </select>
+                </div>
+                <div class="line">
+                    <label for="pointsToWin">Points to win</label>
+                    <select name="pointsToWin" id="pointsToWin">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
+                <div class="line">
+                    <label for="pointsToLose">Points to lose</label>
+                    <select name="pointsToLose" id="pointsToLose">
+                        <option value="8">8</option>
+                        <option value="12">12</option>
+                        <option value="16">16</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
+                <div class="switch-button">
+                    <label>Sound on</label>
+                    <button class="toggle" onclick="toggleSound()">
+                        <span class="icon-slider"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="result-container">
+              <div class="result-block">
+                  <span class="result-title">Player 1:</span>
+                  <span class="result"></span> <!-- Это player1ScoreElement -->
+              </div>
+              <div class="result-block">
+                  <span class="result-title">Player 2:</span>
+                  <span class="result"></span> <!-- Это player2ScoreElement -->
+              </div>
+              <div class="result-block">
+                  <span class="result-title">Google:</span>
+                  <span class="result"></span> <!-- Это googleScoreElement -->
+              </div>
+          </div>
+            <button id="startButton" class="button main-button">START GAME</button>
+        </div>
+
+        <div id="loading-indicator" style="display: none;">Loading...</div>
+        <div id="grid-game" class="table">
+          </div>
+          <div id="win" class="modal" style="display: none;">
+            <div class="modal-decoration"><img src="img/icons/winnerIcon.svg" alt="icon"></div>
+            <div class="modal-elements">
+              <div class="title-modal">You Win!</div>
+              <div class="text-modal">Congratulations</div>
+              <div class="modal-result">
+                <div class="result-block">
+                  <span class="result-title">Catch:</span>
+                  <span class="result">20</span>
+                </div>
+                <div class="result-block">
+                  <span class="result-title">Miss:</span>
+                  <span class="result">4</span>
+                </div>
+              </div>
+              <button class="button restart-button">Play again</button>
+            </div>
+          </div>
+          <div id="won" class="modal" style="display: none;">
+            <div class="modal-decoration"><img src="img/icons/lossIcon.svg" alt="icon"></div>
+            <div class="modal-elements">
+              <div class="title-modal">You Lose!</div>
+              <div class="text-modal">You'll be lucky next time</div>
+              <div class="modal-result">
+                <div class="result-block">
+                  <span class="result-title">Google:</span>
+                  <span class="result">12</span>
+                </div>
+                <div class="result-block">
+                  <span class="result-title">Player1:</span>
+                  <span class="result">10</span>
+                </div>
+                <div class="result-block">
+                  <span class="result-title">Player2:</span>
+                  <span class="result">12</span>
+                </div>
+              </div>
+              <button class="button restart-button">Play again</button>
+            </div>
+          </div>
+        </section>
+</main>
+<script type="module" src="front.js"></script>
+</body>
+</html>
