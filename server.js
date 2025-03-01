@@ -1,9 +1,9 @@
 
 
 import { WebSocketServer } from 'ws';
-import { Game, MOVE_DIRECTIONS } from '../game.js';
-import { EventEmitter } from '../observer/observer.js';
-import { NumberUtility } from '../number-utility.js';
+import { Game, MOVE_DIRECTIONS } from './game.js';
+import { EventEmitter } from './observer/observer.js';
+import { NumberUtility } from './number-utility.js';
 
 const eventEmitter = new EventEmitter();
 const numberUtility = new NumberUtility();
