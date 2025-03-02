@@ -36,8 +36,8 @@ const hideLoadingIndicator = () => {
 
 async function createWebSocketConnection() {
   return new Promise((resolve, reject) => {
-    const socket = new WebSocket("ws://localhost:3001");
-
+    // const socket = new WebSocket("ws://localhost:3001");
+    const socket = new WebSocket("https://game-catch-google.onrender.com");
     socket.onopen = () => {
       console.log("Соединение WebSocket установлено.");
       resolve(socket);
